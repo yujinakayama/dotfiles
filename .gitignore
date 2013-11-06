@@ -1,0 +1,14 @@
+
+# SSH
+id_rsa*
+id_dsa*
+id_ecdsa*
+authorized_keys
+known_hosts
+
+# RubyGems
+credentials
+
+# History
+*history
+?histfile

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+warning() {
+  local message="$1"
+  printf "\e[33m${message}\e[0m\n"
+}
+
+cd "$(dirname "$BASH_SOURCE")"
+cd ..
+
+git pull origin master
+
+for filename in *; do
+  [[ -f $filename ]] || continue
+
+  filename="$(basename "$filename")"
+  file_in_dotfiles="$PWD/$filename"
+  file_in_home="$HOME/.$filename"
+
+  if [[ -e $file_in_home ]]; then
+    if [[ ! -L $file_in_home ]]; then
+      warning "$file_in_home exists but is not a symlink."
+    fi
+  else
+    echo "Creating symlink at $file_in_home"
+    ln -s "$file_in_dotfiles" "$file_in_home"
+  fi
+done
