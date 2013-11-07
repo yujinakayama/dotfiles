@@ -14,6 +14,9 @@ for filename in *; do
   [[ -f $filename ]] || continue
 
   filename="$(basename "$filename")"
+
+  [[ $filename == 'README.md' ]] && continue
+
   file_in_dotfiles="$PWD/$filename"
   file_in_home="$HOME/.$filename"
 
