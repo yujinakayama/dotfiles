@@ -1,7 +1,7 @@
 
 export DOTFILES_ROOT="$HOME/.dotfiles"
 
-for file in "$DOTFILES_ROOT"/zsh-common/*; do
+for file in "$DOTFILES_ROOT"/functions/*; do
   source "$file"
 done
 
