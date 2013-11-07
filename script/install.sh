@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-command_exists() {
+command_exist() {
   local command="$1"
-  type "$command" > /dev/null 2> /dev/null
+  command -v "$command" > /dev/null 2> /dev/null
   return $?
 }
 
@@ -13,12 +13,12 @@ if [[ -d "$installation_path" ]]; then
   exit
 fi
 
-if ! command_exists git; then
+if ! command_exist git; then
   echo "Installing git..."
 
-  if command_exists apt-get; then
+  if command_exist apt-get; then
     sudo apt-get install --yes git
-  elif command_exists brew; then
+  elif command_exist brew; then
     brew install git
   else
     echo "Cannot install git. Aborting."

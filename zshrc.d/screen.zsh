@@ -29,7 +29,7 @@ if [[ $TERM == screen ]]; then
   add-zsh-hook preexec _screen_preexec
 fi
 
-if [[ -x =screen ]]; then
+if command_exist screen; then
   # Convenience way to open a project with screen.
   project-screen() {
     local project_path="$1"
