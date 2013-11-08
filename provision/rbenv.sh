@@ -54,5 +54,6 @@ latest_2_0="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.0.* 
 
 rbenv install "$latest_2_0"
 rbenv global "$latest_2_0"
-gem update --system
-gem clean
+
+~/.rbenv/shims/gem update --system
+~/.rbenv/shims/gem clean
