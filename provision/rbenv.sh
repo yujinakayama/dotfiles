@@ -22,8 +22,10 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   brew install openssl libyaml readline
 
   export RUBY_CONFIGURE_OPTS=--with-readline-dir="$(brew --prefix readline)"
-else
+elif command_exist apt-get; then
   sudo apt-get install --yes build-essential autoconf libssl-dev libyaml-dev libreadline6 libreadline6-dev zlib1g zlib1g-dev
+elif command_exist pacman; then
+  sudo pacman -S --force --needed gcc zlib readline autoconf make
 fi
 
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
