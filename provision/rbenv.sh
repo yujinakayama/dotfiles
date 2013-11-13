@@ -33,6 +33,9 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 git clone https://github.com/sstephenson/rbenv-default-gems.git ~/.rbenv/plugins/rbenv-default-gems
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 default_gems_path="$HOME/.rbenv/default-gems"
 
 cat <<END > "$default_gems_path"
@@ -57,5 +60,5 @@ latest_2_0="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.0.* 
 rbenv install "$latest_2_0"
 rbenv global "$latest_2_0"
 
-~/.rbenv/shims/gem update --system
-~/.rbenv/shims/gem clean
+gem update --system
+gem clean
