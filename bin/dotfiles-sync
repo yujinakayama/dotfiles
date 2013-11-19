@@ -10,6 +10,8 @@ cd ..
 
 git pull origin master
 
+git submodule update --init --recursive
+
 for filename in *; do
   [[ -f $filename ]] || continue
 
