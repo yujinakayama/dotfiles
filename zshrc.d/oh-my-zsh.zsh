@@ -40,7 +40,15 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git z)
+
+if [[ ! -e $ZSH/custom/plugins/zsh-syntax-highlighting ]]; then
+  if [[ ! -d $ZSH/custom/plugins ]]; then
+    mkdir -p "$ZSH/custom/plugins"
+  fi
+  ln -s '../../../zsh-syntax-highlighting' "$ZSH/custom/plugins/zsh-syntax-highlighting"
+fi
+
+plugins=(git z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
