@@ -26,7 +26,7 @@ if ! command_exist git; then
   fi
 fi
 
-git clone https://github.com/yujinakayama/dotfiles.git "$installation_path"
+git clone --recurse-submodules https://github.com/yujinakayama/dotfiles.git "$installation_path"
 
 "$installation_path/bin/dotfiles-sync"
 
