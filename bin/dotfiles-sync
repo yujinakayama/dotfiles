@@ -8,9 +8,9 @@ warning() {
 cd "$(dirname "$BASH_SOURCE")"
 cd ..
 
-git pull origin master
+git pull origin master || exit 1
 
-git submodule update --init --recursive
+git submodule update --init --recursive || exit 1
 
 for filename in *; do
   [[ -f $filename ]] || continue
