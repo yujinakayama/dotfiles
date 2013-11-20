@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH="$DOTFILES_ROOT/oh-my-zsh"
+ZSH_CUSTOM="$DOTFILES_ROOT/oh-my-zsh-custom"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -40,14 +41,6 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-
-if [[ ! -e $ZSH/custom/plugins/zsh-syntax-highlighting ]]; then
-  if [[ ! -d $ZSH/custom/plugins ]]; then
-    mkdir -p "$ZSH/custom/plugins"
-  fi
-  ln -s '../../../zsh-syntax-highlighting' "$ZSH/custom/plugins/zsh-syntax-highlighting"
-fi
-
 plugins=(git z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
