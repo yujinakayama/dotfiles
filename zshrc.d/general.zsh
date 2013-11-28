@@ -1,4 +1,7 @@
 
+# Disable auto-cd enabled by oh-my-zsh.
+unsetopt auto_cd
+
 # Stack all `cd`-ed paths automatically.
 # They can be call by `cd -[tab]`.
 setopt auto_pushd
