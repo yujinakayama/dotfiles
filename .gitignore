@@ -9,6 +9,10 @@ known_hosts
 # RubyGems
 credentials
 
+# AWS
+aws
+.aws
+
 # History
 *history
 ?histfile
