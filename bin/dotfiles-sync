@@ -12,6 +12,10 @@ git pull origin master || exit 1
 
 git submodule update --init --recursive || exit 1
 
+if [[ -d "$HOME/.rbenv" ]]; then
+  rbenv update
+fi
+
 for filename in *; do
   [[ -f $filename ]] || continue
 
