@@ -7,6 +7,8 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   if ! command_exist brew; then
     echo 'Installing Homebrew...'
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    brew tap homebrew/dupes
+    brew tap homebrew/binary
   fi
 elif [[ $(uname -s) == 'Linux' ]]; then
   if ! command_exist apt-get && ! command_exist pacman; then
