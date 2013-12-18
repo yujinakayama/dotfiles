@@ -1,4 +1,11 @@
 
+# Enable zsh-completions installed with Homebrew.
+if command_exist brew && [[ -d "$(brew --prefix)/share/zsh-completions" ]]; then
+  fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
+fi
+
+fpath=("$DOTFILES_ROOT/zsh-completions-osx" $fpath)
+
 # Initialize.
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
