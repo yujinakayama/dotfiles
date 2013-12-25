@@ -41,17 +41,14 @@ default_gems_path="$HOME/.rbenv/default-gems"
 
 cat <<END > "$default_gems_path"
 bundler
+pry
 guard-rspec
 guard-rubocop
-pry-debugger
-rails
 sinatra
 END
 
 if [[ $(uname -s) == 'Darwin' ]]; then
 cat <<END >> "$default_gems_path"
-cocoapods
-nomad-cli
 ruby_gntp
 END
 fi
