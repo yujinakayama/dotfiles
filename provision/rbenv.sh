@@ -2,11 +2,6 @@
 
 # https://github.com/sstephenson/ruby-build/wiki
 
-if [[ -d "$HOME/.rbenv" ]]; then
-  echo 'Already installed.'
-  exit
-fi
-
 cd "$(dirname "$BASH_SOURCE")"
 source ../functions/command_exist.sh
 
@@ -28,18 +23,24 @@ elif command_exist pacman; then
   sudo pacman -S --force --needed gcc zlib readline autoconf make
 fi
 
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-git clone https://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update
+if [[ ! -d "$HOME/.rbenv" ]]; then
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+  git clone https://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
-latest_2_1="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.1.* | egrep -v 'dev|pre|rc' | sort | tail -1)")"
+ruby_version="$1"
 
-rbenv install "$latest_2_1"
-rbenv global "$latest_2_1"
+if [[ -z $ruby_version ]]; then
+  ruby_version="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.1.* | egrep -v 'dev|pre|rc' | sort | tail -1)")"
+fi
+
+rbenv install "$ruby_version"
+rbenv global "$ruby_version"
 
 gem update --system
 gem install bundler pry
