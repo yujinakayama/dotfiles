@@ -23,7 +23,9 @@ elif command_exist pacman; then
   sudo pacman -S --force --needed gcc zlib readline autoconf make
 fi
 
-if [[ ! -d "$HOME/.rbenv" ]]; then
+if [[ -d "$HOME/.rbenv" ]]; then
+  rbenv update
+else
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
