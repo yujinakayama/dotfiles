@@ -36,10 +36,10 @@ git clone https://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-latest_2_0="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.0.* | egrep -v 'dev|pre|rc' | sort | tail -1)")"
+latest_2_1="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.1.* | egrep -v 'dev|pre|rc' | sort | tail -1)")"
 
-rbenv install "$latest_2_0"
-rbenv global "$latest_2_0"
+rbenv install "$latest_2_1"
+rbenv global "$latest_2_1"
 
 gem update --system
 gem install bundler pry
