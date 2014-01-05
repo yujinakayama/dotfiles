@@ -2,6 +2,11 @@
 # Disable auto-cd enabled by oh-my-zsh.
 unsetopt auto_cd
 
+if [[ -d $HOME/Projects ]]; then
+  # Allow to cd to each project directory without prefix ~/Projects.
+  cdpath=("$HOME/Projects" "$cdpath")
+fi
+
 # Stack all `cd`-ed paths automatically.
 # They can be call by `cd -[tab]`.
 setopt auto_pushd
