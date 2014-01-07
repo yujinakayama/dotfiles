@@ -4,7 +4,7 @@ unsetopt auto_cd
 
 if [[ -d $HOME/Projects ]]; then
   # Allow to cd to each project directory without prefix ~/Projects.
-  cdpath=("$HOME/Projects" "$cdpath")
+  cdpath=("$cdpath" "$HOME/Projects")
 fi
 
 # Stack all `cd`-ed paths automatically.
