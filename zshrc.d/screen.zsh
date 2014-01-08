@@ -23,7 +23,11 @@ if [[ $TERM == screen ]]; then
 
   # Show the process name in region title.
   _screen_preexec() {
-    echo -ne "\ek${1%% *}\e\\"
+    local command="$1"
+    command="${command#sudo }"
+    command="${command#bundle exec }"
+    command="${command%% *}"
+    echo -ne "\ek${command}\e\\"
   }
 
   add-zsh-hook preexec _screen_preexec
