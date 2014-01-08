@@ -34,7 +34,7 @@ if command_exist screen; then
   project-screen() {
     local project_path="$1"
     cd "$project_path"
-    local project_name=$(basename "$project_path")
+    local project_name=$(basename "$PWD")
     screen -S "$project_name"
   }
 fi
