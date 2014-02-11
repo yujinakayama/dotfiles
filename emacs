@@ -16,3 +16,6 @@
 
 ; Make the final line to be a blank line.
 (setq require-final-newline t)
+
+; Show current column number.
+(column-number-mode)
