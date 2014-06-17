@@ -24,7 +24,7 @@ install tree
 install wget
 install zsh-completions
 
-#install appledoc
+# install appledoc
 install arping
 install bash
 install bash-completion
@@ -39,8 +39,8 @@ install emacs
 install fcrackzip
 install gnupg2
 install go
-install haskell-platform
-install hping
+# install haskell-platform
+# install hping
 install hub
 install hydra
 install imagemagick
@@ -63,11 +63,11 @@ install node
 install parallel
 install postgresql
 install pstree
-install ptex
+# install ptex
 install python
 install qt
 install ragel
-install rtmpdump
+# install rtmpdump
 install rust
 install scala
 install socat
