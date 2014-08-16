@@ -10,4 +10,5 @@
 .Trashes
 
 # Bundler
+.bundle
 /vendor/bundle
