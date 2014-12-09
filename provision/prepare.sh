@@ -6,7 +6,7 @@ source ../functions/command_exist.sh
 if [[ $(uname -s) == 'Darwin' ]]; then
   if ! command_exist brew; then
     echo 'Installing Homebrew...'
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew tap homebrew/dupes
     brew tap homebrew/binary
   fi
