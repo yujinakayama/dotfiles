@@ -54,8 +54,9 @@ begin
     end
 
     def rewrite(&block)
-      instance_exec(source.ast, &block)
+      return unless source.ast
 
+      instance_exec(source.ast, &block)
       rewritten_raw_source = rewriter.process
 
       if source.path
