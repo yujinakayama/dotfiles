@@ -7,6 +7,7 @@ end
 begin
   require 'astrolabe/builder'
   require 'parser/current'
+  require 'find'
 
   class Source
     attr_reader :buffer, :ast, :path, :error
@@ -45,7 +46,15 @@ begin
     attr_accessor :source, :rewriter
 
     def self.rewrite(arg, &block)
-      new(arg).rewrite(&block)
+      if File.directory?(arg)
+        Find.find(arg) do |path|
+          next unless File.file?(path)
+          next unless File.extname(path) == '.rb'.freeze
+          new(path).rewrite(&block)
+        end
+      else
+        new(arg).rewrite(&block)
+      end
     end
 
     def initialize(arg)
