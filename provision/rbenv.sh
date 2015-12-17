@@ -42,7 +42,7 @@ if [[ -z $ruby_version ]]; then
 fi
 
 rbenv install "$ruby_version"
-rbenv global "$ruby_version"
+rbenv shell "$ruby_version"
 
 gem update --system
 gem install bundler pry
