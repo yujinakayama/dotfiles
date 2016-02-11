@@ -3,7 +3,7 @@
 cd "$(dirname "$BASH_SOURCE")"
 source ../functions/command_exist.sh
 
-./prepare.sh || exit 1
+./package_manager.sh || exit 1
 
 if [[ $(uname -s) == 'Darwin' ]]; then
   brew install emacs git tree the_silver_searcher zsh zsh-completions
