@@ -1,4 +1,3 @@
-
 if [[ $(uname -s) == Darwin ]]; then
   PROMPT='%m:%1~ %n%# '
 else

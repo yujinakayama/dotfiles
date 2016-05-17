@@ -1,4 +1,3 @@
-
 typeset -U path
 
 path=("$DOTFILES_ROOT/bin" $path)

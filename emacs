@@ -1,4 +1,3 @@
-
 ; Do not make backup file. (e.g. file.txt~)
 (setq make-backup-files nil)
 

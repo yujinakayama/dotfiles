@@ -1,4 +1,3 @@
-
 # Set DOTFILES_ROOT again since `sudo` may reset it.
 export DOTFILES_ROOT="$HOME/.dotfiles"
 

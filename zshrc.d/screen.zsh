@@ -1,4 +1,3 @@
-
 if [[ $TERM == screen ]]; then
   # Show the current directory in region title.
   _screen_precmd() {

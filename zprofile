@@ -1,4 +1,3 @@
-
 export DOTFILES_ROOT="$HOME/.dotfiles"
 
 for file in "$DOTFILES_ROOT"/functions/*; do

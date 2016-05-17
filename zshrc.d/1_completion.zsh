@@ -1,4 +1,3 @@
-
 fpath=("$DOTFILES_ROOT/zsh-completions-osx" "$DOTFILES_ROOT/zsh-completions/src" $fpath)
 
 # Initialize.
