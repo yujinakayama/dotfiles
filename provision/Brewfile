@@ -1,7 +1,6 @@
 brew 'arping'
 brew 'bash'
 brew 'carthage'
-brew 'class-dump'
 brew 'cloc'
 brew 'cmake'
 brew 'cocot'
