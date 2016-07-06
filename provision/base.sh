@@ -6,8 +6,7 @@ source ../functions/command_exist.sh
 ./package_manager.sh || exit 1
 
 if [[ $(uname -s) == 'Darwin' ]]; then
-  brew install emacs git tree the_silver_searcher zsh zsh-completions
-  brew install --HEAD screen
+  brew bundle
 elif command_exist apt-get; then
   sudo apt-get install --yes emacs24-nox git screen tree zsh
 elif command_exist pacman; then
