@@ -1,3 +1,5 @@
+tap 'homebrew/dupes'
+
 brew 'arping'
 brew 'bash'
 brew 'carthage'
