@@ -37,7 +37,7 @@ fi
 ruby_version="$1"
 
 if [[ -z $ruby_version ]]; then
-  ruby_version="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.3.* | egrep -v 'dev|pre|rc' | sort | tail -1)")"
+  ruby_version="$(basename "$(ls ~/.rbenv/plugins/ruby-build/share/ruby-build/2.4.* | egrep -v 'dev|pre|rc' | sort | tail -1)")"
 fi
 
 rbenv install "$ruby_version"
