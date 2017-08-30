@@ -28,6 +28,7 @@ if [[ -d "$HOME/.rbenv" ]]; then
 else
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
   git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git clone https://github.com/rbenv/rbenv-each.git ~/.rbenv/plugins/rbenv-each
   git clone https://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update
 
   export PATH="$HOME/.rbenv/bin:$PATH"
