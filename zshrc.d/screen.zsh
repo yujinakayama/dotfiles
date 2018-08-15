@@ -1,4 +1,4 @@
-if [[ $TERM == screen ]]; then
+if [[ $TERM == screen* ]]; then
   # Show the current directory in region title.
   _screen_precmd() {
     local truncation_length=36
