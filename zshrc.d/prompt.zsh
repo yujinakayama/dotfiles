@@ -1,5 +1,10 @@
 if [[ $(uname -s) == Darwin ]]; then
-  PROMPT='%m:%1~ %n%# '
+  if [[ -f "$DOTFILES_ROOT/prompt-hostname" ]]; then
+    prompt_hostname=$(<"$DOTFILES_ROOT/prompt-hostname")
+    PROMPT="$prompt_hostname:%1~ %n%# "
+  else
+    PROMPT='%m:%1~ %n%# '
+  fi
 else
   PROMPT='%n@%m:%1~%# '
 fi

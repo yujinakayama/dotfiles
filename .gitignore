@@ -16,3 +16,5 @@ aws
 # History
 *history
 ?histfile
+
+prompt-hostname
