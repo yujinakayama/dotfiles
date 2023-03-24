@@ -21,3 +21,8 @@ if is-at-least 4.3.10; then
 
   add-zsh-hook precmd _vcs_info_precmd
 fi
+
+prompt_for_demo() {
+  PROMPT='$ '
+  RPROMPT=''
+}
