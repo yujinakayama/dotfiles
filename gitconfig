@@ -26,3 +26,5 @@
 	trustExitCode = true
 [github]
 	user = yujinakayama
+[init]
+	defaultBranch = main
